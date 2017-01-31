@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">BAiresParking</string>
+    <string name="search">Search..</string>
+    <string name="empty_favorites">You can add and remove Favorites \n with a single click \n on your favorite park star</string>
+    <string name="activate_gps">You need to activate the GPS to get distance properly</string>
+    <string name="webpage_error">Error getting parkings \n Try again later</string>
+    <string name="getting_parkings">Getting parkings..</string>
+    <string name="price_hour">$%1$s/hs</string>
+    <string name="fav_direction">%1$s\n%2$s</string>
+    <string name="high_availability">High Availability</string>
+    <string name="medium_availability">Medium Availability</string>
+    <string name="low_availability">Low Availability</string>
+    <string name="no_availability">No availability</string>
+</resources>
