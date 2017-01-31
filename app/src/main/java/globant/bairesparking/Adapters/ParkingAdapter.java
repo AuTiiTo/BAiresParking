@@ -143,7 +143,7 @@ public class ParkingAdapter extends RecyclerView.Adapter<ParkingViewHolder> impl
                 } else {
                     insertFav(parkingItem);
                 }
-                notifyItemChanged(originalList.indexOf(parkingItem));
+                notifyItemChanged(filteredList.indexOf(parkingItem));
             }
 
             public void removeFav(ParkingItem item) {
