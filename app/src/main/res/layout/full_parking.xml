@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/full_parking_card"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/cardview_margin">
+
+        <LinearLayout
+            android:id="@+id/first_raw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="@dimen/weight_view"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                tools:text="Titulo"
+                android:id="@+id/tv_parking_name"/>
+
+            <TextView
+                android:layout_width="@dimen/weight_view"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:textAlignment="viewEnd"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                tools:text="20 Kmts"
+                android:id="@+id/tv_parking_distance"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_parking_direction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/first_raw"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            tools:text="Direccion"/>
+
+        <LinearLayout
+            android:id="@+id/third_raw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_parking_direction"
+            android:layout_marginTop="@dimen/cardview_margin"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="@dimen/weight_view"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                tools:text="$20/Hs"
+                android:id="@+id/tv_parking_price"/>
+
+            <TextView
+                android:layout_width="@dimen/weight_view"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:textAlignment="viewEnd"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textColor="#ff44"
+                tools:text="No Availability"
+                android:id="@+id/tv_parking_availability"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/line"
+            android:layout_below="@id/third_raw"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:orientation="vertical"
+            android:background="@color/cardview_dark_background"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/line">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:padding="@dimen/cardview_margin"
+                android:clickable="true"
+                app:srcCompat="@android:drawable/ic_menu_mylocation"
+                android:id="@+id/iv_view_in_map"/>
+
+            <TextView
+                android:text="Map"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:padding="@dimen/cardview_margin"
+                android:layout_toEndOf="@id/iv_view_in_map"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:padding="@dimen/cardview_margin"
+                android:clickable="true"
+                android:layout_alignParentEnd="true"
+                app:srcCompat="@android:drawable/ic_menu_call"
+                android:id="@+id/iv_call"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:padding="@dimen/cardview_margin"
+                android:clickable="true"
+                android:layout_toStartOf="@id/iv_call"
+                app:srcCompat="@android:drawable/btn_star"
+                android:id="@+id/iv_fav"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
