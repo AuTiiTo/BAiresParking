@@ -16,7 +16,15 @@ import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
 
 import globant.bairesparking.Adapters.EmptyFavoriteAdapter;
@@ -90,10 +98,40 @@ public class MainActivity extends AppCompatActivity implements AsyncResponse, Lo
             progress.setCancelable(false); // disable dismiss by tapping outside of the dialog
             progress.show();
         } else {
-            requestParkings(pref.getString("parkings", ""));
+            tryGetParkingsFromRaw();
+//            requestParkings(pref.getString("parkings", ""));
         }
         downloadData();
     }
+
+    /*JSON TEST*/
+    private void tryGetParkingsFromRaw() {
+        InputStream raw = getResources().openRawResource(R.raw.parkings);
+
+        Reader is = new BufferedReader(new InputStreamReader(raw));
+        addParkings(getParkingList(is));
+    }
+
+    private void addParkings(List<ParkingItem> parkings) {
+        final List favIds = favAdapter.getFavIds();
+        final Location lastLocation = locationReader.getLastLocation();
+
+        for (ParkingItem parkingItem : parkings) {
+            if (favIds.contains(parkingItem.getId())) {
+                favAdapter.addFavorite(parkingItem);
+                parkingItem.setFavorite(true);
+            }
+            parkingAdapter.addParking(parkingItem, lastLocation);
+        }
+    }
+
+    public static List<ParkingItem> getParkingList(Reader jsonRaw) {
+        Gson gson = new Gson();
+        Type typeOfT = new TypeToken<ArrayList<ParkingItem>>(){}.getType();
+        List<ParkingItem> response = (List<ParkingItem>) gson.fromJson(jsonRaw, typeOfT);
+        return response;
+    }
+    /*JSON TEST*/
 
     private void downloadData() {
         WebReader reader = new WebReader(this, this.getApplicationContext());
