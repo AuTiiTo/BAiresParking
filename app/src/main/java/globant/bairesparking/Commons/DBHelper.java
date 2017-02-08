@@ -13,11 +13,13 @@ import java.util.List;
  * @author s.ruiz
  */
 
-public class ParkingsDBHelper extends SQLiteOpenHelper {
-    private static String dbName = "ParkingsFavoriteDB";
+public class DBHelper extends SQLiteOpenHelper {
+//    private static String favoriteDB = "ParkingsFavoriteDB";
+    private static String parkingDB = "ParkingsDB";
+//    private String tableName = "";
 
-    public ParkingsDBHelper(Context context) {
-        super(context, dbName, null, 1);
+    public DBHelper(Context context) {
+        super(context, parkingDB, null, 1);
     }
 
     @Override
@@ -54,3 +56,4 @@ public class ParkingsDBHelper extends SQLiteOpenHelper {
         return favoritesList;
     }
 }
+

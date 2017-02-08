@@ -16,15 +16,11 @@ import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.List;
 
 import globant.bairesparking.Adapters.EmptyFavoriteAdapter;
@@ -40,6 +36,8 @@ import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.schedulers.Schedulers;
+
+import static globant.bairesparking.Managers.ParkingManager.getParkingList;
 
 public class MainActivity extends AppCompatActivity implements AsyncResponse, LocationInterface, FavoriteAdapter.MainContainer, SearchView.OnQueryTextListener {
 
@@ -123,13 +121,6 @@ public class MainActivity extends AppCompatActivity implements AsyncResponse, Lo
             }
             parkingAdapter.addParking(parkingItem, lastLocation);
         }
-    }
-
-    public static List<ParkingItem> getParkingList(Reader jsonRaw) {
-        Gson gson = new Gson();
-        Type typeOfT = new TypeToken<ArrayList<ParkingItem>>(){}.getType();
-        List<ParkingItem> response = (List<ParkingItem>) gson.fromJson(jsonRaw, typeOfT);
-        return response;
     }
     /*JSON TEST*/
 

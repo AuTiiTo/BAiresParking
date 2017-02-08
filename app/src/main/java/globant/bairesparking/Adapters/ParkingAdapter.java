@@ -17,7 +17,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Locale;
 
-import globant.bairesparking.Commons.ParkingsDBHelper;
+import globant.bairesparking.Commons.DBHelper;
 import globant.bairesparking.Managers.ParkingItem;
 import globant.bairesparking.R;
 
@@ -31,12 +31,12 @@ public class ParkingAdapter extends RecyclerView.Adapter<ParkingViewHolder> impl
     private List<ParkingItem> filteredList;
 
     private Context mContext;
-    private ParkingsDBHelper parkingDB;
+    private DBHelper parkingDB;
     private FavoriteAdapter favAd;
     private CustomFilter filter;
 
     public ParkingAdapter(Context context, FavoriteAdapter favoriteAdapter) {
-        parkingDB = new ParkingsDBHelper(context);
+        parkingDB = new DBHelper(context);
         parkingDB.onCreate(parkingDB.getWritableDatabase());
         favAd = favoriteAdapter;
 
@@ -133,7 +133,7 @@ public class ParkingAdapter extends RecyclerView.Adapter<ParkingViewHolder> impl
         });
     }
 
-    public void setClickListener(final ParkingViewHolder holder, final ParkingItem parkingItem, final ParkingsDBHelper parkingDB) {
+    public void setClickListener(final ParkingViewHolder holder, final ParkingItem parkingItem, final DBHelper parkingDB) {
 
         holder.fav.setOnClickListener(new View.OnClickListener() {
             @Override

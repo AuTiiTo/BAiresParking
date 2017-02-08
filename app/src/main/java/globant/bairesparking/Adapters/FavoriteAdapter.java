@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-import globant.bairesparking.Commons.ParkingsDBHelper;
+import globant.bairesparking.Commons.DBHelper;
 import globant.bairesparking.Managers.ParkingItem;
 import globant.bairesparking.R;
 
@@ -22,7 +22,7 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteViewHolder> {
     private List favIds;
     private Context mContext;
     public ArrayList<ParkingItem> favItems = new ArrayList<>();
-    public ParkingsDBHelper parkingDB;
+    public DBHelper parkingDB;
     private MainContainer mainContainer;
 
 
@@ -32,7 +32,7 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteViewHolder> {
 
     public FavoriteAdapter(MainContainer mainContainer, Context context) {
         mContext = context;
-        parkingDB = new ParkingsDBHelper(context);
+        parkingDB = new DBHelper(context);
         parkingDB.onCreate(parkingDB.getWritableDatabase());
         favIds = parkingDB.getFavorites();
         this.mainContainer = mainContainer;

@@ -4,7 +4,7 @@ package globant.bairesparking.Managers;
  * @author s.ruiz
  */
 
-public class ParkingItem{
+public class ParkingItem {
     private long id;
     private float cost_per_hour;
     private String street;
@@ -78,6 +78,7 @@ public class ParkingItem{
     public void setDistance(float distance) {
         this.distance = distance;
     }
+
     @Override
     public String toString() {
         return "ParkingItem{" +
