@@ -13,7 +13,7 @@
         android:id="@+id/favorite_parkings_caroucel"
         android:layout_height="0dp"
         android:layout_width="match_parent"
-        android:layout_weight="15"
+        android:layout_weight="32"
         android:orientation="horizontal"
         android:background="@color/cardview_dark_background"/>
 
@@ -21,10 +21,10 @@
         android:id="@+id/parking_list"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="85"
+        android:layout_weight="68"
         android:orientation="vertical"
         android:background="@color/cardview_dark_background"/>
-    
+
     <com.google.android.gms.ads.AdView
         android:id="@+id/adview"
         android:layout_width="match_parent"

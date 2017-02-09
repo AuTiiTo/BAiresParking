@@ -1,4 +1,4 @@
-package globant.bairesparking;
+package globant.bairesparking.Activities;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -32,6 +32,7 @@ import globant.bairesparking.Commons.LocationReader;
 import globant.bairesparking.Commons.WebReader;
 import globant.bairesparking.Managers.ParkingItem;
 import globant.bairesparking.Managers.ParkingManager;
+import globant.bairesparking.R;
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
