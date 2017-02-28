@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">BAiresParking</string>
     <string name="search">Search..</string>
-    <string name="empty_favorites">You can add and remove Favorites\nwith a single click\non your favorite park star</string>
+    <string name="empty_favorites">You can add or remove Favorites\nwith a single click\non your favorite park star</string>
     <string name="activate_gps">You need to activate the GPS to get distance properly</string>
     <string name="webpage_error">Error getting parkings\nTry again later</string>
     <string name="getting_parkings">Getting parkings..</string>
