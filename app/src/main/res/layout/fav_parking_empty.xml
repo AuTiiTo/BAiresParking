@@ -18,7 +18,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
             android:textColor="@color/place_autocomplete_search_hint"
             android:minLines="2"
-            android:text="@string/empty_favorites"/>
+            android:text="@string/empty_favorite"/>
 
         <ImageView
             android:id="@+id/iv_fav_empty"
